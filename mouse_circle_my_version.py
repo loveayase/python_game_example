@@ -5,13 +5,6 @@
  * Date: 26. 3. 1.
  * Desc: 
 '''
-'''
- * Project Name: python_game
- * NAME: 
- * Made by Jaejun
- * Date: 26. 3. 1.
- * Desc: 
-'''
 
 import tkinter
 
