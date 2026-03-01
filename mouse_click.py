@@ -1,0 +1,32 @@
+'''
+ * Project Name: python_game
+ * NAME: 
+ * Made by Jaejun
+ * Date: 26. 3. 1.
+ * Desc: 
+'''
+
+import tkinter
+
+FNT = ("Times New Roman", 40)
+
+
+def move(e):
+    cvs.delete('all')
+    s = "({}, {})".format(e.x, e.y)
+    cvs.create_text(400, 200, text=s, font=FNT)
+
+
+def click(e):
+    cvs.delete('all')
+    s = "Click! ({}, {})".format(e.x, e.y)
+    cvs.create_text(400, 200, text=s, font=FNT)
+
+
+root = tkinter.Tk()
+root.title("마우스 커서 좌표")
+root.bind("<Motion>", move)
+root.bind("<Button>", click)
+cvs = tkinter.Canvas(width=800, height=400)
+cvs.pack()
+root.mainloop()
