@@ -23,11 +23,21 @@ class Game:
 
         self.list = tkinter.PhotoImage(file="./image/illust.png")  # 생성된 순서에 따라 영향을 받음 canvas
         self.bg = tkinter.PhotoImage(file="./image/bg.png")
+        # self.ninja_list = [
+        #     tkinter.PhotoImage(file="./image/ninja0.png"),
+        #     tkinter.PhotoImage(file="./image/ninja1.png"),
+        #     tkinter.PhotoImage(file="./image/ninja2.png"),
+        #     tkinter.PhotoImage(file="./image/ninja3.png")
+        # ]
         self.ninja_list = [
-            tkinter.PhotoImage(file="./image/ninja0.png"),
-            tkinter.PhotoImage(file="./image/ninja1.png"),
-            tkinter.PhotoImage(file="./image/ninja2.png"),
-            tkinter.PhotoImage(file="./image/ninja3.png")
+            tkinter.PhotoImage(file="./image/test/pomeranian_run_right_00_122x144.png"),
+            tkinter.PhotoImage(file="./image/test/pomeranian_run_right_01_122x144.png"),
+            tkinter.PhotoImage(file="./image/test/pomeranian_run_right_02_122x144.png"),
+            tkinter.PhotoImage(file="./image/test/pomeranian_run_right_03_122x144.png"),
+            tkinter.PhotoImage(file="./image/test/pomeranian_run_right_04_122x144.png"),
+            tkinter.PhotoImage(file="./image/test/pomeranian_run_right_05_122x144.png"),
+            tkinter.PhotoImage(file="./image/test/pomeranian_run_right_06_122x144.png"),
+            tkinter.PhotoImage(file="./image/test/pomeranian_run_right_07_122x144.png"),
         ]
 
     def get_ninja(self):
@@ -60,7 +70,7 @@ class NinjaRun(Tk):
         if e.keysym == "space":
             NinjaRun.Game.set_game()
 
-        if e.keysym == "Return":
+        if e.keysym == "Return" or e.keysym == "Escape":
             NinjaRun.Game.set_title()
 
     def main(self):
@@ -76,7 +86,7 @@ class NinjaRun(Tk):
             ninja.x = ninja.x + 40
             if ninja.x > 960: ninja.x = 0
             ninja.a = ninja.a + 1
-            self.cvs.create_image(ninja.x, 400, image=NinjaRun.Game.get_ninja_image_list()[ninja.a % 4])
+            self.cvs.create_image(ninja.x, 400, image=NinjaRun.Game.get_ninja_image_list()[ninja.a % 8])
 
         self.after(100, self.main)
 
